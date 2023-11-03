@@ -31,7 +31,7 @@ class _ToDoListWidgetState extends State<ToDoListWidget> {
               ),
             )
           : const Center(
-              child: Text("Add SOme Todo "),
+              child: Text("Add Some Todo Clicking on + icon"),
             ),
     );
   }
