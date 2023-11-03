@@ -19,7 +19,7 @@ class _ToDoListWidgetState extends State<ToDoListWidget> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.9,
-      width: MediaQuery.of(context).size.width * 0.8,
+      width: MediaQuery.of(context).size.width * 0.85,
       // color: Colors.black12,
       child: widget.listOfTodo.isNotEmpty
           ? ListView.builder(

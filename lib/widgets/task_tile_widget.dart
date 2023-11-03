@@ -32,11 +32,10 @@ class TaskTile extends StatelessWidget {
           margin: const EdgeInsets.only(left: 8),
           padding: const EdgeInsets.only(left: 16),
           decoration: BoxDecoration(
-            color: AppColors.primaryColor,
-            // color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(10)),
-            // border: Border.all(color: AppColors.primaryColor, width: 2)
-          ),
+              color: AppColors.primaryColor,
+              // color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              border: Border.all(color: Colors.white, width: 2)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -67,7 +66,7 @@ class TaskTile extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    todoModal!.isDone == "true" ? "Done" : "Incomplete",
+                    todoModal!.isDone == "true" ? "Completed" : "Incomplete",
                     style: const TextStyle(fontSize: 14, color: Colors.black87),
                   ),
                 ],
