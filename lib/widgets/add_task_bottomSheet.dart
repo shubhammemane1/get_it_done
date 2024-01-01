@@ -1,4 +1,5 @@
-import 'package:flutter/foundation.dart';
+// ignore_for_file: file_names, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it_done/bloc/todo_bloc.dart';
@@ -50,7 +51,6 @@ class _GlobalModalBottomSheetState extends State<GlobalModalBottomSheet> {
     return BlocConsumer<TodoBloc, TodoState>(
       bloc: widget.todoBloc,
       listener: (context, state) {
-        // TODO: implement listener
       },
       builder: (context, state) {
         return Container(
@@ -80,7 +80,7 @@ class _GlobalModalBottomSheetState extends State<GlobalModalBottomSheet> {
               isPressed!
                   ? (titleController.text.isEmpty ||
                           descriptionController.text.isEmpty)
-                      ? Text(
+                      ? const Text(
                           "Please Fill Data ",
                           style: TextStyle(color: Colors.red),
                         )
@@ -154,7 +154,7 @@ class _GlobalModalBottomSheetState extends State<GlobalModalBottomSheet> {
 class ToastWidget extends StatefulWidget {
   final String message;
 
-  ToastWidget({required this.message});
+  const ToastWidget({super.key, required this.message});
 
   @override
   _ToastWidgetState createState() => _ToastWidgetState();
@@ -168,12 +168,12 @@ class _ToastWidgetState extends State<ToastWidget> {
   }
 
   void _showToast() async {
-    await Future.delayed(Duration(milliseconds: 100));
+    await Future.delayed(const Duration(milliseconds: 100));
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(widget.message),
-          duration: Duration(seconds: 2), // Adjust the duration as needed
+          duration: const Duration(seconds: 2), // Adjust the duration as needed
         ),
       );
     }

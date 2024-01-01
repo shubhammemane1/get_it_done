@@ -29,7 +29,6 @@ class _EditTaskDialougState extends State<EditTaskDialoug> {
   bool? isPressed = false;
   @override
   void initState() {
-    // TODO: implement initState
 
     currentTitle = widget.todoModal!.title;
 
@@ -48,7 +47,6 @@ class _EditTaskDialougState extends State<EditTaskDialoug> {
     return BlocConsumer<TodoBloc, TodoState>(
       bloc: widget.todoBloc,
       listener: (context, state) {
-        // TODO: implement listener
       },
       builder: (context, state) {
         return AlertDialog(
@@ -83,13 +81,13 @@ class _EditTaskDialougState extends State<EditTaskDialoug> {
                 isPressed!
                     ? (titleEditingController!.text.isEmpty ||
                             descriptionEditingController!.text.isEmpty)
-                        ? Text("Please Fill Data " , style:  TextStyle(color: Colors.red),)
+                        ? const Text("Please Fill Data " , style:  TextStyle(color: Colors.red),)
                         : Container()
                     : Container(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("is Todo Completed :"),
+                    const Text("is Todo Completed :"),
                     CupertinoSwitch(
                       value: isComplete!,
                       onChanged: (value) {

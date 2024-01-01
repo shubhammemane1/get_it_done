@@ -10,7 +10,7 @@ import 'package:intl/intl.dart';
 class TaskTile extends StatelessWidget {
   final TodoModal? todoModal;
   final TodoBloc? todoBloc;
-  TaskTile({super.key, this.todoModal, this.todoBloc});
+  const TaskTile({super.key, this.todoModal, this.todoBloc});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class TaskTile extends StatelessWidget {
           decoration: BoxDecoration(
               color: AppColors.primaryColor,
               // color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
               border: Border.all(color: Colors.white, width: 2)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +54,7 @@ class TaskTile extends StatelessWidget {
                         fontSize: 20,
                         fontFamily: "Nexa"),
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width * 0.4,
                     child: Text(
                       todoModal!.description.toString(),
@@ -109,7 +109,6 @@ class TaskTile extends StatelessWidget {
     return BlocConsumer<TodoBloc, TodoState>(
       bloc: todoBloc,
       listener: (context, state) {
-        // TODO: implement listener
       },
       builder: (context, state) {
         return AlertDialog(

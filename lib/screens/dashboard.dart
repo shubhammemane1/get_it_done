@@ -9,10 +9,9 @@ import 'package:get_it_done/utils/data.dart';
 import 'package:get_it_done/widgets/add_task_bottomSheet.dart';
 import 'package:get_it_done/widgets/todo_list_widget.dart';
 
-import '../widgets/edit_task_dialog.dart';
 
 class DashBoard extends StatefulWidget {
-  DashBoard({super.key});
+  const DashBoard({super.key});
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -43,7 +42,6 @@ class _DashBoardState extends State<DashBoard> {
 
   @override
   void initState() {
-    // TODO: implement initState
 
     todoBloc.add(OnInitialTodoList());
     super.initState();
@@ -54,7 +52,6 @@ class _DashBoardState extends State<DashBoard> {
     return BlocConsumer<TodoBloc, TodoState>(
       bloc: todoBloc,
       listener: (context, state) {
-        // TODO: implement listener
 
         if (state is TodoLoadingState) {
           customLogs("Loading");
@@ -161,7 +158,7 @@ class _DashBoardState extends State<DashBoard> {
 
   List<TodoModal> getFilteredTodos(int selectedTabIndex) {
     final today = DateTime.now();
-    final tomorrow = today.add(Duration(days: 1));
+    final tomorrow = today.add(const Duration(days: 1));
 
     switch (selectedTabIndex) {
       case 0:

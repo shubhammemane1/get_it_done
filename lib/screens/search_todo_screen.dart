@@ -21,7 +21,6 @@ class _SearchTodoListState extends State<SearchTodoList> {
 
   @override
   void initState() {
-    // TODO: implement initState
 
     widget.todoBloc!.add(OnInitialTodoList());
     super.initState();
@@ -32,7 +31,6 @@ class _SearchTodoListState extends State<SearchTodoList> {
     return BlocConsumer<TodoBloc, TodoState>(
       bloc: widget.todoBloc,
       listener: (context, state) {
-        // TODO: implement listener
 
         if (state is TodoLoadingState) {
           customLogs("Loading");
